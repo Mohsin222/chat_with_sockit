@@ -29,9 +29,16 @@ io.on("connection", (socket) => {
 //     if (clients[targetId]) clients[targetId].emit("message", msg);
 //   });
 
-socket.on('/test',(msg)=>{
-    console.log(msg);
+socket.on('signin',(id)=>{
+    console.log(id);
+        clients[id] = socket;
+    console.log(clients);
 })
+
+  socket.on("message", (msg) => {
+    console.log(msg);
+
+  });
 });
 
 

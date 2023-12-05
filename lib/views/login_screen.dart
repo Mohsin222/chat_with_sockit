@@ -1,5 +1,6 @@
 import 'package:chat_with_socket/custom_ui/button_card.dart';
 import 'package:chat_with_socket/model/chatmodel.dart';
+import 'package:chat_with_socket/views/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -67,13 +68,13 @@ class _LoginScreenState extends State<LoginScreen> {
           itemBuilder: (contex, index) => InkWell(
                 onTap: () {
                   sourceChat = chatmodels.removeAt(index);
-                  // Navigator.pushReplacement(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (builder) => Homescreen(
-                  //               chatmodels: chatmodels,
-                  //               sourchat: sourceChat,
-                  //             )));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (builder) => Homescreen(
+                                chatmodels: chatmodels,
+                                sourchat: sourceChat,
+                              )));
                 },
                 child: ButtonCard(
                   name: chatmodels[index].name,
