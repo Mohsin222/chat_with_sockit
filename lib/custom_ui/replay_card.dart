@@ -28,7 +28,7 @@ class ReplyCard extends StatelessWidget {
                   bottom: 10,
                 ),
                 child: Text(
-                  message!,
+                  message ?? '',
                   style: TextStyle(
                     fontSize: 16,
                   ),

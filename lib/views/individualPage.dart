@@ -42,7 +42,20 @@ class _IndividualPageState extends State<IndividualPage> {
     socket!.connect();
     socket!.emit("signin", widget.sourchat!.id);
 
-    socket!.onConnect((data)=>print('Connnected'));
+    socket!.onConnect((data){
+      print('Connnected');
+
+      socket!.on('message', (msg) {
+        setMessage("destination", msg["message"]);
+
+        // messages.add(MessageModel(message: data['message'],time: '',type: 'aa'));
+        
+      // setMessage("destination", data["message"]);
+
+      print('aaaaaaaaaaaaaaaaaa');
+      
+      });
+    });
 print(socket!.connected);
 
   }
@@ -58,11 +71,12 @@ print(socket!.connected);
         message: message,
         time: DateTime.now().toString().substring(10, 16));
 
-  messages.add(messageModel);
-      print(messages);
+  
     setState(() {
-    
+    messages.add(messageModel);
+
     });
+         
   }
 
   @override
@@ -204,7 +218,7 @@ print(socket!.connected);
                         else {
                           return ReplyCard(
                             message: messages[index].message.toString(),
-                            time: messages[index].time.toString(),
+                            time:messages[index].time.toString(),
                           );
                         }
                       },
