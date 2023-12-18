@@ -1,6 +1,7 @@
 import 'package:chat_with_socket/model/chatmodel.dart';
 import 'package:chat_with_socket/pages/camera_page.dart';
 import 'package:chat_with_socket/pages/chatpage.dart';
+import 'package:chat_with_socket/pages/statuspage.dart';
 
 
 import 'package:flutter/material.dart';
@@ -94,8 +95,7 @@ class _HomescreenState extends State<Homescreen>
             chatmodels: widget.chatmodels,
             sourchat: widget.sourchat,
           ),
-          Text("STATUS"),
-          Text("Calls"),
+      StatusPage(),          Text("Calls"),
         ],
       ),
     );
