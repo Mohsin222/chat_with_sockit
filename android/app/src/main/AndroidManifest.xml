@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.chat_with_socket">
      <uses-permission android:name="android.permission.INTERNET" />
+     <!-- for do not destrub mode -->
+     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
    <application
         android:label="chat_with_socket"
         android:name="${applicationName}"

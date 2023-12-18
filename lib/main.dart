@@ -1,8 +1,17 @@
+import 'package:camera/camera.dart';
 import 'package:chat_with_socket/chat_1.dart';
-import 'package:chat_with_socket/views/login_screen.dart';
+import 'package:chat_with_socket/practice/sockit1.dart';
+import 'package:chat_with_socket/screens/camera_screen.dart';
+
+import 'package:chat_with_socket/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+import 'others/passcode/passcode_screen.dart';
+
+Future<void> main()async {
+    WidgetsFlutterBinding.ensureInitialized();
+
+      cameras = await availableCameras();
   runApp(const MyApp());
 }
 
@@ -24,10 +33,16 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
+
+        fontFamily: "OpenSans",
         primarySwatch: Colors.blue,
+        useMaterial3: true
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
       home: LoginScreen(),
+      // home: ExampleHomePage(title: 'Passcode'),
+      // home: AllowScreenShortOrNot(),
+      // home: Scoket1Practice(),
     );
   }
 }

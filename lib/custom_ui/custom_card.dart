@@ -1,7 +1,8 @@
 import 'package:chat_with_socket/model/chatmodel.dart';
-import 'package:chat_with_socket/views/individualPage.dart';
+import 'package:chat_with_socket/screens/individualPage.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 
 class CustomCard extends StatelessWidget {
@@ -26,6 +27,7 @@ class CustomCard extends StatelessWidget {
           ListTile(
             leading: CircleAvatar(
               radius: 30,
+              child: SvgPicture.asset("assets/groups.svg"),
               // child: SvgPicture.asset(
               //   chatModel.isGroup ? "assets/groups.svg" : "assets/person.svg",
               //   color: Colors.white,

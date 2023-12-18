@@ -1,5 +1,6 @@
 import 'package:chat_with_socket/custom_ui/custom_card.dart';
 import 'package:chat_with_socket/model/chatmodel.dart';
+import 'package:chat_with_socket/screens/selectcontacts.dart';
 
 import 'package:flutter/material.dart';
 
@@ -18,8 +19,8 @@ class _ChatPageState extends State<ChatPage> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Navigator.push(context,
-          //     MaterialPageRoute(builder: (builder) => SelectContact()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (builder) => SelectContact()));
         },
         child: Icon(
           Icons.chat,
